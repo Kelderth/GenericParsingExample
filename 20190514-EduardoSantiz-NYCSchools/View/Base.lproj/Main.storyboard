@@ -20,7 +20,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="School finder" translatesAutoresizingMaskIntoConstraints="NO" id="qLz-di-gK7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="search"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mni-y9-xl1">
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>

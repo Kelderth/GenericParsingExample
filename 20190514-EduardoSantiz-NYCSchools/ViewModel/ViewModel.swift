@@ -9,10 +9,12 @@
 import Foundation
 
 class ViewModel {
-    let ns = NetworkService()
+    let ns = NetworkService() //Renombrar a networkService, hacer nombres mas significativos
     
-    let directoryBaseURL = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
-    let schoolDetailsURL = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
+    private static let baseURL = "https://data.cityofnewyork.us/resource/"
+    
+    let directoryBaseURL = ViewModel.baseURL + "s3k6-pzi2.json"
+    let schoolDetailsURL = ViewModel.baseURL + "f9bf-2cp4.json"
     
     private var highSchools: [HighSchools]?
     private var aditionalInformation: [AditionalInformation]?
@@ -96,7 +98,7 @@ class ViewModel {
         searchTermsFiltered = schoolsDirectoryBackup.filter({$0.schoolName.contains(text)})
         
         if !searchTermsFiltered!.isEmpty && !text.isEmpty {
-            schoolsDirectory = searchTermsFiltered!
+            schoolsDirectory = searchTermsFiltered! //No hagas force unwrapping
             
             completion(schoolsDirectory, true)
         } else {

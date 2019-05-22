@@ -21,16 +21,14 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            if let school = schoolDetail {
-                dbnLabel.text = school.dbn
-                numberOfSatTestTakersLabel.text = school.numOfSatTestTakers
-                satCriticalReadingAverageScoreLabel.text = school.satCriticalReadingAvgScore
-                satMathAverageScoreLabel.text = school.satMathAvgScore
-                satWritingAverageScoreLabel.text = school.satWritingAvgSchore
-                schoolNameLabel.text = school.schoolName
-            }
-    }
-    
-
+        //Reindente tu código
+        if let school = schoolDetail {
+            dbnLabel.text = school.dbn
+            numberOfSatTestTakersLabel.text = school.numOfSatTestTakers
+            satCriticalReadingAverageScoreLabel.text = school.satCriticalReadingAvgScore
+            satMathAverageScoreLabel.text = school.satMathAvgScore
+            satWritingAverageScoreLabel.text = school.satWritingAvgSchore
+            schoolNameLabel.text = school.schoolName
+        }
+    } //Y quité espacios en blanco
 }

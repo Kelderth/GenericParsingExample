@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: - Properties.
     
-    let vm = ViewModel()
+    let vm = ViewModel() //Renombrar "vm" a "viewModel"
     let highSchoolsDirectory = [HighSchools].self
     let schoolsDetails = [AditionalInformation].self
     
@@ -81,7 +81,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController //Evita hacer force unwrapping, mejor usa optional binding con "?"
         vc.schoolDetail = vm.getSchoolDetails(index: indexPath.row)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -97,6 +97,7 @@ extension ViewController: UISearchBarDelegate {
         searchBar.becomeFirstResponder()
         
         vm.filterTableViewContent(text: searchText) { (schoolsArrayFiltered, isFiltered) in
+            // Si haces lo mismo en ambos, no tiene sentido el if, simplemente llama la funcion
             if isFiltered {
                 self.tableView.reloadData()
             } else {
